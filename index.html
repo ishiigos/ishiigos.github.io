@@ -63,10 +63,30 @@
 
 <!-- About Section -->
 <section id="about" class="py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">About Me</h2>
-        <p class="text-lg leading-relaxed">
-            Bio
+    <div class="max-w-4xl mx-auto px-4 text-left">
+        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+        <p class="text-lg">
+            <h1 class="text-2xl font-bold mb-6 text-center"> 🙋🏻‍♀️ Hey there! My name is Ishita Goswami, Welcome to my website</h1>
+
+            <h3 class="text-1xl font-bold mb-6 text-center"> A little about me: </h3>
+             ✧ Graduate in STEM disciplines:
+            <br>
+            &emsp;&emsp;✦ Master's in Bioinformatics & Systems Biology from the University of Manchester
+            <br>
+            &emsp;&emsp;✦ Bachelor's in Microbial & Food Technology from Panjab University
+            <br><br>
+            ✧ 👩🏻‍💻 Actively looking for roles in Bioinformatics, Software Development, Data Analysis and related fields in the UK. I am eager to contribute to innovative projects.
+            <br><br>
+            ✧ 🖥️ Currently working on multiple projects in pursuit of learning and keeping up with advancements in software and bioinformatics
+            <br><br>
+            ✧ 🔬 Interests:
+            <ul>
+                <li>Evolutionary biology mechanisms,</li>
+                <li>Artificial Intelligence and Machine Learning in Biology,</li>
+                <li>Exploring biological data patterns,</li>
+                <li>Role of bioinformatics for advancements in genomics and medicine.</li>
+                <li>Biological systems,</li>
+            </ul>
         </p>
     </div>
 </section>
@@ -90,9 +110,21 @@
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="py-20 text-center">
-    <h2 class="text-3xl font-bold mb-6">Skills</h2>
-    <p>-Key skills and technologies-</p>
+<section id="skills" class="py-20 max-w-4xl mx-auto px-4 text-left ">
+    <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
+    <p>
+        <ul>
+            <li><b>Programming Languages:</b> Python(numpy, scikit-learn, matplotlib, pandas, NetworkX), R, Unix, Linux commands, Bash, Shell scripting</li>
+            <li><b>Machine Learning:</b> Supervised and Unsupervised learning, PCA, Logistic and Linear Regression, Clustering, Decision Trees, Neural Networks</li>
+            <li><b>Web and Mobile Development:</b> HTML, CSS, TypeScript, JavaScript, ReactNative</li>
+            <li><b>Data Preparation:</b> Web scraping, Data wrangling, Data cleaning</li>
+            <li><b>Version Control:</b> Git</li>
+            <li><b>Bioinformatics:</b> Databases, BLAST, NGS analysis, Phylogenetic analysis, sequence analysis, network analysis, network and metabolic modelling</li>
+            <li><b>Statistics / Data Analysis:</b> R Studio, data visualization, statistical modelling </li>
+            <li><b>Next Generation Sequencing:</b> Illumina, Nanopore, PacBio reads, FASTQ quality control, Genome Assembly, Sequence alignment, Gene Annotation, Gene Mapping, Visualization</li>
+            <li><b>Collaboration and Soft skills:</b> Active listening, teamwork, time management.</li>
+        </ul>
+    </p>
 </section>
 
 <!-- Contact Section -->
@@ -105,6 +137,22 @@
             <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white" rows="5" required></textarea>
             <button type="submit" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition text-white">Send Message</button>
         </form>
+
+        <script>
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+                const form = event.target;
+                fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                }).then(response => {
+                    if (response.ok) {
+                        document.getElementById('successMsg').classList.remove('hidden');
+                        form.reset();
+                    }
+                });
+            });
+        </script>
     </div>
 </section>
 
