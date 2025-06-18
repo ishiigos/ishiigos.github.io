@@ -6,6 +6,51 @@
     <title>Portfolio Website</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <style>
+
+    .swiper {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+
+    .swiper-button-next,
+    .swiper-button-prev {
+      color: white;
+      z-index: 999;
+      font-size: 24px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      font-size: 24px;
+    }
+
+    .swiper-slide {
+        background-color: #1f2937; /* Tailwind gray-800 */
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start; /* or center if you prefer */
+        align-items: stretch;
+        height: 100%; /* ensure full height usage */
+        min-height: 400px; /* adjust as needed */
+        max-height: 100%;
+    }
+
+    .swiper-slide img {
+        height: 180px; /* fixed height for uniformity */
+        object-fit: cover;
+        width: 100%;
+    }
+
+    </style>
 </head>
 <body class="bg-gray-900 text-white font-sans">
 <!-- Navigation Bar -->
@@ -116,91 +161,125 @@
                 <a href="https://github.com/ishiigos/climate_change_modeling" class="text-blue-400 hover:underline">View Project</a>
             </div>
         </div><br><br>
-        <details class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
+        <details id="vizDetails" class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
             <summary class="text-2xl font-bold text-center cursor-pointer text-white select-none">
                 Data Visualization Projects (Click to Expand)
             </summary>
-            <div class="mt-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- 1 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Basic Scatter Plot</h3>
-                    <p class="mb-4">Visualizes correlation between two continuous variables using Matplotlib.</p>
-                    <img src="images/data_visualization_projects/1_scatter_plot.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="projects/data_visualization_projects/1_scatter_plot.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+            <div class="mt-8">
+                <!-- Swiper Carousel Start -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper">
+                        <!-- Project 1 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/1_scatter_plot.png" alt="Scatter Plot" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Basic Scatter Plot</h3>
+                                <p class="mb-2 text-sm">Visualizes correlation between two continuous variables using Matplotlib.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline">View Code</a>
+                            </div>
+                        </div>
+                        <!-- Project 2 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/2_bar_chart.png" alt="Bar Chart" class="w-full h-48 object-cover">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📊 Bar Chart</h3>
+                                <p class="mb-2 text-sm">Compares sales quantities across product categories.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/2_bar_chart.py" class="text-blue-400 hover:underline">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 3 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/3_line_plot_time_series.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Line Plot</h3>
+                                <p class="mb-4">Tracks daily stock prices over time.</p>
+                                <a href="projects/data_visualization_projects/3_line_plot_time_series.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 4 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/4_heatmap_correlation_matrix.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Heatmap for Correlation Matrix</h3>
+                                <p class="mb-4">Displays feature correlations in the Iris dataset using Seaborn.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 5 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/5_interactive_bubble_chart.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Bubble Chart (Plotly)</h3>
+                                <p class="mb-4">Uses size and color to represent multivariate relationships from Gapminder-like data.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                         </div>
+                        <!-- 6 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/6_distribution_plot.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Violin Plot</h3>
+                                <p class="mb-4">Visualizes the distribution of bill length by penguin species and sex using Seaborn.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 7 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/7_treemap.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Treemap</h3>
+                                <p class="mb-4">Represents hierarchical sales data using squarify.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 8 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/8_geospatial_cloropleth_map.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Geospatial Cloropleth Map</h3>
+                                <p class="mb-4">Interactive US unemployment map using Folium and GeoJSON.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 9 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/9_network_graph_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Network Graph</h3>
+                                <p class="mb-4">Force-directed graph of synthetic connections with NetworkX.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 10 -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/10_plotly_dashboard_advanced.py.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard</h3>
+                                <p class="mb-4">Dash app analyzing restaurant tips using linked Plotly plots.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                        <!-- 10a -->
+                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+                            <img src="images/data_visualization_projects/10a_plotly_dashboard_iris_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
+                            <div class="p-4">
+                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard - Flower Data</h3>
+                                <p class="mb-4">Dash app analyzing flowers using linked Plotly plots.</p>
+                                <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Navigation Arrows -->
+                    <div class="swiper-button-prev absolute left-0 text-white"></div>
+                    <div class="swiper-button-next absolute right-0 text-white"></div>
+
+                    <!-- Pagination (dots) -->
+                    <div class="swiper-pagination mt-4"></div>
                 </div>
-                <!-- 2 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Bar Chart</h3>
-                    <p class="mb-4">Compares sales quantities across product categories.</p>
-                    <img src="images/data_visualization_projects/2_bar_chart.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="projects/data_visualization_projects/2_bar_chart.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 3 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Line Plot</h3>
-                    <p class="mb-4">Tracks daily stock prices over time.</p>
-                    <img src="images/data_visualization_projects/3_line_plot_time_series.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="projects/data_visualization_projects/3_line_plot_time_series.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 4 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Heatmap for Correlation Matrix</h3>
-                    <p class="mb-4">Displays feature correlations in the Iris dataset using Seaborn.</p>
-                    <img src="images/data_visualization_projects/4_heatmap_correlation_matrix.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="projects/data_visualization_projects/4_heatmap_correlation_matrix.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 5 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Interactive Bubble Chart (Plotly)</h3>
-                    <p class="mb-4">Uses size and color to represent multivariate relationships from Gapminder-like data.</p>
-                    <img src="images/data_visualization_projects/5_interactive_bubble_chart.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="projects/data_visualization_projects/5_interactive_bubble_chart.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 6 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Violin Plot</h3>
-                    <p class="mb-4">Visualizes the distribution of bill length by penguin species and sex using Seaborn.</p>
-                    <img src="images/data_visualization_projects/6_distribution_plot.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 7 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Treemap</h3>
-                    <p class="mb-4">Represents hierarchical sales data using squarify.</p>
-                    <img src="images/data_visualization_projects/7_treemap.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 8 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Geospatial Cloropleth Map</h3>
-                    <p class="mb-4">Interactive US unemployment map using Folium and GeoJSON.</p>
-                    <img src="images/data_visualization_projects/8_geospatial_cloropleth_map.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 9 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Network Graph</h3>
-                    <p class="mb-4">Force-directed graph of synthetic connections with NetworkX.</p>
-                    <img src="images/data_visualization_projects/9_network_graph_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 10 -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard</h3>
-                    <p class="mb-4">Dash app analyzing restaurant tips using linked Plotly plots.</p>
-                    <img src="images/data_visualization_projects/10_plotly_dashboard_advanced.py.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-                <!-- 10a -->
-                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                    <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard - Flower Data</h3>
-                    <p class="mb-4">Dash app analyzing flowers using linked Plotly plots.</p>
-                    <img src="images/data_visualization_projects/10a_plotly_dashboard_iris_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                    <a href="https://github.com/ishiigos/python-viz-projects/blob/main/1_basic_scatter_plot.py" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                </div>
-            </details>
-        </div>
-    </section>
+            </div>
+        </details>
+    </div>
+</section>
 
 <!-- Resume Section -->
 <section id="resume" class="py-20 bg-gray-800 text-center">
@@ -267,5 +346,35 @@
 <footer class="py-4 bg-gray-900 text-center">
     <p>2025 Ishita Goswami.</p>
 </footer>
+
+<!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+new Swiper('.mySwiper', {
+    loop: true,
+    speed: 600,
+    spaceBetween: 30,
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+    }
+});
+</script>
+
 </body>
 </html>
