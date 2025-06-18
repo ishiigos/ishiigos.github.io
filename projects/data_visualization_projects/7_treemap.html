@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Bar Plot - Python Visualization</title>
+  <title>Treemap - Python Visualization</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/github-dark.min.css" rel="stylesheet">
   <style>
@@ -16,13 +16,13 @@
 <body class="bg-gray-900 text-white font-sans">
 
   <main class="max-w-4xl mx-auto px-6 py-16">
-    <h1 class="text-4xl font-bold mb-4 text-center">📈 Bar Chart</h1>
-    <p class="text-lg text-gray-300 mb-8 text-center">Compares sales quantities across product categories.<code>Matplotlib</code>.</p>
+    <h1 class="text-4xl font-bold mb-4 text-center">📈 Treemap</h1>
+    <p class="text-lg text-gray-300 mb-8 text-center">Represents hierarchical sales data using squarify <code>Matplotlib</code>.</p>
 
     <!-- Buttons -->
     <div class="flex justify-center gap-6 mb-8">
       <a href="../../index.html#projects" class="bg-gray-700 hover:bg-gray-600 text-white px-6 py-3 rounded-lg transition">← Back to Projects</a>
-      <a href="https://github.com/ishiigos/data_visualisation_python/blob/main/2_bar_chart_beginner.py" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg transition">View on GitHub</a>
+      <a href="https://github.com/ishiigos/data_visualisation_python/blob/main/7_treemap_intermediate.py" target="_blank" class="bg-blue-600 hover:bg-blue-500 text-white px-6 py-3 rounded-lg transition">View on GitHub</a>
     </div>
 
     <!-- Code Section -->
@@ -33,7 +33,7 @@
     <!-- Image Preview -->
     <h2 class="text-2xl font-semibold mb-4">📜 Sample Output</h2>
     <div class="mb-8">
-      <img src="../../images/data_visualization_projects/2_bar_chart.png" alt="Bar Chart Output" class="rounded-lg shadow-lg mx-auto w-full max-w-2xl">
+      <img src="../../images/data_visualization_projects/7_treemap.png" alt="Treemap Output" class="rounded-lg shadow-lg mx-auto w-full max-w-2xl">
     </div>
 
   </main>
@@ -45,7 +45,7 @@
     hljs.highlightAll();
 
     // Optional: Load the raw Python file dynamically (works if hosted properly and CORS is allowed)
-    fetch('https://raw.githubusercontent.com/ishiigos/data_visualisation_python/refs/heads/main/2_bar_chart_beginner.py')
+    fetch('https://raw.githubusercontent.com/ishiigos/data_visualisation_python/refs/heads/main/7_treemap_intermediate.py')
       .then(response => response.text())
       .then(code => {
         document.getElementById('codeBlock').textContent = code;
