@@ -1,533 +1,322 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78Z422E0J5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ishita Goswami | Bioinformatician & Developer</title>
+  <meta name="description" content="Official portfolio of Ishita Goswami – bioinformatician, software developer, and data science researcher.">
+  <meta name="author" content="Ishita Goswami">
+  <meta name="robots" content="index, follow">
 
-      gtag('config', 'G-78Z422E0J5');
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ishita Goswami",
-      "url": "https://ishiigos.github.io",
-      "image": "ishitagoswami.jpg",
-      "sameAs": [
-        "https://github.com/ishiigos",
-        "https://www.linkedin.com/in/ishita-goswami-21aug/",
-        "https://linktr.ee/ishita_goswami",
-        "https://www.kaggle.com/ishiigoswami",
-        "https://in.bold.pro/my/ishitagoswami-250729170405",
-        "https://substack.com/@ishiigos?utm_source=user-menu",
-        "https://in.bold.pro/my/ishitagoswami-250729170405",
-        "https://medium.com/@ishiigos"
-      ],
-      "jobTitle": "Bioinformatician | Software Developer | Data Analyst",
-      "worksFor": {
-        "@type": "Unified Mentor",
-        "name": "Independent Researcher, Data Analyst Intern"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Manchester",
-        "addressCountry": "UK"
-      }
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-78Z422E0J5"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-78Z422E0J5');
+  </script>
+
+  <!-- Schema Markup -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Ishita Goswami",
+    "url": "https://ishiigos.github.io",
+    "image": "ishitagoswami.jpg",
+    "sameAs": [
+      "https://github.com/ishiigos",
+      "https://www.linkedin.com/in/ishita-goswami-21aug/",
+      "https://linktr.ee/ishita_goswami",
+      "https://www.kaggle.com/ishiigoswami",
+      "https://substack.com/@ishiigos",
+      "https://medium.com/@ishiigos"
+    ],
+    "jobTitle": "Bioinformatician | Software Developer | Data Analyst",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Independent Researcher, Data Analyst Intern"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Manchester",
+      "addressCountry": "UK"
     }
-    </script>
+  }
+  </script>
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ishita Goswami | Bioinformatician & Developer</title>
-    <meta name="description" content=" Official portfolio of Ishita Goswami (ishiigos) – bioinformatician, software developer, and data science researcher.">
-    <meta name="robots" content="index, follow">
-    <meta name="author" content="Ishita Goswami">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
-    <style>
-
-    .swiper {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
-
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: white;
-      z-index: 999;
-      font-size: 24px;
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      font-size: 24px;
-    }
-
-    .swiper-slide {
-        background-color: #1f2937; /* Tailwind gray-800 */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; /* or center if you prefer */
-        align-items: stretch;
-        height: 100%; /* ensure full height usage */
-        min-height: 400px; /* adjust as needed */
-        max-height: 100%;
-    }
-
-    .swiper-slide img {
-        height: 180px; /* fixed height for uniformity */
-        object-fit: cover;
-        width: 100%;
-    }
-
-    </style>
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    body { background-color: #1f2937; font-family: 'Inter', sans-serif; }
+    nav a.active { color: #3b82f6; }
+    .swiper-slide img { height: 180px; object-fit: cover; width: 100%; }
+  </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
+<body class="text-white">
+
 <!-- Navigation Bar -->
-<nav class="fixed w-full bg-gray-800 p-4 shadow-md">
-    <div class="flex justify-center space-x-6">
-        <a href="#about" class="text-white hover:text-blue-400">About Me</a>
-        <a href="#projects" class="text-white hover:text-blue-400">Projects</a>
-        <a href="#education" class="text-white hover:text-blue-400">Education</a>
-        <a href="#experience" class="text-white hover:text-blue-400">Experience</a>
-        <a href="#skills" class="text-white hover:text-blue-400">Skills</a>
-        <a href="#resume" class="text-white hover:text-blue-400">Resume</a>
-    </div>
+<nav class="fixed w-full bg-gray-800 p-4 shadow-md z-50">
+  <div class="flex justify-center space-x-6">
+    <a href="#about" class="hover:text-blue-400">About Me</a>
+    <a href="#projects" class="hover:text-blue-400">Projects</a>
+    <a href="#education" class="hover:text-blue-400">Education</a>
+    <a href="#experience" class="hover:text-blue-400">Experience</a>
+    <a href="#skills" class="hover:text-blue-400">Skills</a>
+    <a href="#resume" class="hover:text-blue-400">Resume</a>
+    <a href="#contact" class="hover:text-blue-400">Contact</a>
+  </div>
 </nav>
 
 <!-- Social Media Sidebar -->
-<div class="fixed top-1/3 right-4 grid grid-rows-5 gap-4">
-    <a href="https://github.com/ishiigos" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-github"></i></a>
-    <a href="#" class="text-white text-2xl hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/ishita-goswami-21aug" class="text-white text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:ishita_goswami@outlook.com" class="text-white text-2xl hover:text-red-500"><i class="fas fa-envelope"></i></a>
-    <a href="#" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-twitter"></i></a>
+<div class="fixed top-1/3 right-4 grid grid-rows-5 gap-4 z-50">
+  <a href="https://github.com/ishiigos" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-github"></i></a>
+  <a href="#" class="text-white text-2xl hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+  <a href="https://www.linkedin.com/in/ishita-goswami-21aug" class="text-white text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+  <a href="mailto:ishita_goswami@outlook.com" class="text-white text-2xl hover:text-red-500"><i class="fas fa-envelope"></i></a>
+  <a href="#" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-twitter"></i></a>
 </div>
 
-
 <!-- Hero Section -->
-<section class="h-screen flex flex-col justify-center items-center text-center">
-    <h1 class="text-5xl font-bold mb-4">Ishita Goswami</h1>
-    <p class="text-xl mb-6">Bioinformatician | Web Developer | Coder</p>
-    <a href="#projects" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">View My Work</a>
+<section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900">
+  <h1 class="text-5xl font-bold mb-4">Ishita Goswami</h1>
+  <p class="text-xl mb-6">Bioinformatician | Web Developer | Data Scientist</p>
+  <a href="#projects" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition text-white text-lg font-semibold">View My Work</a>
 </section>
 
 <!-- About Section -->
 <section id="about" class="py-20 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4 text-left">
-        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-        <p class="text-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center"> 🙋🏻‍♀️ Hey there! My name is Ishita Goswami, Welcome to my website</h1>
-        <h3 class="text-1xl font-bold mb-6 text-center"> A little about me: </h3>
-        ✧ Graduate in STEM disciplines:
-        <br>
-        &emsp;&emsp;✦ Master's in Bioinformatics & Systems Biology from the University of Manchester
-        <br>
-        &emsp;&emsp;✦ Bachelor's in Microbial & Food Technology from Panjab University
-        <br><br>
-        ✧ 👩🏻‍💻 Actively looking for roles in Bioinformatics, Software Development, Data Analysis and related fields in the UK. I am eager to contribute to innovative projects.
-        <br><br>
-        ✧ 🖥️ Currently working on multiple projects in pursuit of learning and keeping up with advancements in software and bioinformatics
-        <br><br>
-        ✧ 🔬 Interests:
-        <ul>
-            <li>Evolutionary biology mechanisms,</li>
-            <li>Artificial Intelligence and Machine Learning in Biology,</li>
-            <li>Exploring biological data patterns,</li>
-            <li>Role of bioinformatics for advancements in genomics and medicine.</li>
-            <li>Biological systems,</li>
-        </ul>
-        </p>
+  <div class="max-w-4xl mx-auto px-4">
+    <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
+    <div class="bg-gray-700 p-8 rounded-lg shadow-lg text-center">
+      <h3 class="text-2xl font-semibold mb-4">🙋🏻‍♀️ Hey there! My name is Ishita Goswami</h3>
+      <p class="mb-4">Graduate in STEM disciplines:<br>
+        ✦ Master's in Bioinformatics & Systems Biology – University of Manchester<br>
+        ✦ Bachelor's in Microbial & Food Technology – Panjab University
+      </p>
+      <p class="mb-4">
+        Actively seeking roles in Bioinformatics, Software Development, and Data Analysis in the UK. Eager to contribute to innovative projects.
+      </p>
+      <p class="mb-4">
+        Interests: Evolutionary biology, AI in Biology, Genomics, Biological data patterns.
+      </p>
     </div>
+  </div>
 </section>
 
 <!-- Projects Section -->
 <section id="projects" class="py-20">
-    <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
-        <p class="text-center mb-12"><b>Academic Projects</b></p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Linyphiid Identification Key</h3>
-                <p class="mb-4">A key to identify spider species based on character selection by the user.</p>
-                <a href="https://github.com/ishiigos/SpiderIdentification" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">BUSCO phylogenetics analysis</h3>
-                <p class="mb-4">Python and Linux pipeline for phylogenetics tree construction for <i>Chlorella</i> genomes</p>
-                <a href="https://github.com/ishiigos/BUSCO_PhylogenticsAnalysis" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">AI / ML Tool for Antibiotic resistance in Bacteria</h3>
-                <p class="mb-4">-Brief description</p>
-                <a href="#" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-        </div><br><br>
-        <p class="text-center mb-12"><b>Portfolio Projects</b></p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Personalised Healthcare Recommendations</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/personalised_healthcare_recommendations" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">OCD Patient Dataset: Demographics and Clinical Data</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/OCD_patient_dataset" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Drugs, Side Effects and Medical Conditions</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/drugs_side_effects" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">DLife Expectancy Analysis</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/life_expectancy_analysis" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Climate Change Modelling</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/climate_change_modeling" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-        </div><br><br>
-        <details id="vizDetails" class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
-            <summary class="text-2xl font-bold text-center cursor-pointer text-white select-none">
-                📊 Data Visualization Projects (Click to Expand)
-            </summary>
-            <div class="mt-8">
-                <!-- Swiper Carousel Start -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/1_scatter_plot.png" alt="Scatter Plot" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Basic Scatter Plot</h3>
-                                <p class="mb-2 text-sm">Visualizes correlation between two continuous variables using Matplotlib.</p>
-                                <a href="projects/data_visualization_projects/1_scatter_plot.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/2_bar_chart.png" alt="Bar Chart" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📊 Bar Chart</h3>
-                                <p class="mb-2 text-sm">Compares sales quantities across product categories.</p>
-                                <a href="projects/data_visualization_projects/2_bar_chart.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 3 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/3_line_plot_time_series.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Line Plot</h3>
-                                <p class="mb-4">Tracks daily stock prices over time.</p>
-                                <a href="projects/data_visualization_projects/3_line_plot_time_series.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/4_heatmap_correlation_matrix.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Heatmap for Correlation Matrix</h3>
-                                <p class="mb-4">Displays feature correlations in the Iris dataset using Seaborn.</p>
-                                <a href="projects/data_visualization_projects/4_heatmap_correlation_matrix.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/5_interactive_bubble_chart.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Bubble Chart (Plotly)</h3>
-                                <p class="mb-4">Uses size and color to represent multivariate relationships from Gapminder-like data.</p>
-                                <a href="projects/data_visualization_projects/5_interactive_bubble_chart.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                         </div>
-                        <!-- 6 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/6_distribution_plot.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Violin Plot</h3>
-                                <p class="mb-4">Visualizes the distribution of bill length by penguin species and sex using Seaborn.</p>
-                                <a href="projects/data_visualization_projects/6_distribution_plot.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/7_treemap.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Treemap</h3>
-                                <p class="mb-4">Represents hierarchical sales data using squarify.</p>
-                                <a href="projects/data_visualization_projects/7_treemap.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/8_geospatial_cloropleth_map.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Geospatial Cloropleth Map</h3>
-                                <p class="mb-4">Interactive US unemployment map using Folium and GeoJSON.</p>
-                                <a href="projects/data_visualization_projects/8_geospatial_cloropleth_map.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/9_network_graph_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Network Graph</h3>
-                                <p class="mb-4">Force-directed graph of synthetic connections with NetworkX.</p>
-                                <a href="projects/data_visualization_projects/9_network_graph.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/10_plotly_dashboard_advanced.py.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard</h3>
-                                <p class="mb-4">Dash app analyzing restaurant tips using linked Plotly plots.</p>
-                                <a href="projects/data_visualization_projects/10_plotly_dashboard.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10a -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/10a_plotly_dashboard_iris_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard - Flower Data</h3>
-                                <p class="mb-4">Dash app analyzing flowers using linked Plotly plots.</p>
-                                <a href="projects/data_visualization_projects/10a_plotly_dashboard_iris.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Navigation Arrows -->
-                    <div class="swiper-button-prev absolute left-0 text-white"></div>
-                    <div class="swiper-button-next absolute right-0 text-white"></div>
+  <div class="max-w-6xl mx-auto px-4">
+    <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
 
-                    <!-- Pagination (dots) -->
-                    <div class="swiper-pagination mt-4"></div>
-                </div>
-            </div>
-        </details><br>
-        <details id="vizDetails" class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
-            <summary class="text-2xl font-bold text-center cursor-pointer text-white select-none">
-                💻 Software Development Projects (Click to Expand)
-            </summary>
-            <div class="mt-8">
-                <!-- Swiper Carousel Start -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/1_calculator.png" alt="Calculator" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Calculator</h3>
-                                <p class="mb-2 text-sm"> A calculator that supports multiple operations, handles invalid input gracefully, and keeps a history of calculations in a file.</p>
-                                <a href="projects/software_development_projects/1_calculator.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
-                        </div>
-                        <!-- Project 2 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/2_to_do_list_manager_run.png" alt="To Do List" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 To Do List Manager</h3>
-                                <p class="mb-2 text-sm">A more robust to-do list that saves tasks to a file, allows setting priorities, and filters tasks.</p>
-                                <a href="projects/software_development_projects/2_to_do_list_manager.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 3 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/3_number_guessing_game.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Number Guessing Game</h3>
-                                <p class="mb-4">The computer generates a random number, and the user tries to guess it. The game provides hints (higher/lower).</p>
-                                <a href="projects/software_development_projects/3_number_guessing_game.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/4_password_generator.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Password Generator</h3>
-                                <p class="mb-4">Generates a random password based on user-specified length and character types (letters, numbers, symbols).</p>
-                                <a href="projects/software_development_projects/4_password_generator.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/5_rock_paper_scissors.py.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Rock Paper Scissors</h3>
-                                <p class="mb-4">A classic game where the user plays against the computer.</p>
-                                <a href="projects/software_development_projects/5_rock_paper_scissors.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                         </div>
-                        <!-- 6 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/6_unit_convertor.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Unit Converter</h3>
-                                <p class="mb-4">Converts between different units (e.g., Celsius to Fahrenheit, meters to feet).</p>
-                                <a href="projects/software_development_projects/6_unit_convertor.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/7_text_editor.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Text Editor</h3>
-                                <p class="mb-4">A command-line tool to create, read, and append to text files.</p>
-                                <a href="projects/software_development_projects/7_text_editor.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/8_contact_book.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Contact Book</h3>
-                                <p class="mb-4">Stores and manages contacts (name and phone number) in memory.</p>
-                                <a href="projects/software_development_projects/8_contact_book.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/9_dice_roll.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Dice Roll</h3>
-                                <p class="mb-4">Simulates rolling a dice and displays the result.</p>
-                                <a href="projects/software_development_projects/9_dice_roll.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/10_quiz_game.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Quiz Game</h3>
-                                <p class="mb-4">A simple multiple-choice quiz with a few questions and a scoring system.</p>
-                                <a href="projects/software_development_projects/10_quiz_game.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>                        
-                    </div>
-                    <!-- Navigation Arrows -->
-                    <div class="swiper-button-prev absolute left-0 text-white"></div>
-                    <div class="swiper-button-next absolute right-0 text-white"></div>
-
-                    <!-- Pagination (dots) -->
-                    <div class="swiper-pagination mt-4"></div>
-                </div>
-            </div>
-        </details>
+    <!-- Academic Projects -->
+    <p class="text-center mb-6 font-semibold">Academic Projects</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">Linyphiid Identification Key</h3>
+        <p class="mb-4">Identify spider species based on character selection.</p>
+        <a href="https://github.com/ishiigos/SpiderIdentification" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">BUSCO Phylogenetics Analysis</h3>
+        <p class="mb-4">Python & Linux pipeline for phylogenetic tree construction of <i>Chlorella</i> genomes.</p>
+        <a href="https://github.com/ishiigos/BUSCO_PhylogenticsAnalysis" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">AI/ML Tool for Antibiotic Resistance</h3>
+        <p class="mb-4">Predicts bacterial resistance patterns using ML algorithms.</p>
+        <a href="#" class="text-blue-400 hover:underline">View Project</a>
+      </div>
     </div>
+
+    <!-- Portfolio Projects -->
+    <p class="text-center mb-6 font-semibold">Portfolio Projects</p>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">Personalised Healthcare Recommendations</h3>
+        <p class="mb-4">-Brief description-</p>
+        <a href="https://github.com/ishiigos/personalised_healthcare_recommendations" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">OCD Patient Dataset Analysis</h3>
+        <p class="mb-4">-Brief description-</p>
+        <a href="https://github.com/ishiigos/OCD_patient_dataset" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+      <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl hover:scale-105 transition-transform duration-300">
+        <h3 class="text-xl font-semibold mb-2">Drugs, Side Effects and Medical Conditions</h3>
+        <p class="mb-4">-Brief description-</p>
+        <a href="https://github.com/ishiigos/drugs_side_effects" class="text-blue-400 hover:underline">View Project</a>
+      </div>
+    </div>
+
+    <!-- Data Visualization Projects Carousel -->
+    <details class="bg-gray-800 rounded-lg shadow-md p-6 mb-8 open:bg-gray-800 transition-all duration-300">
+      <summary class="text-2xl font-bold text-center cursor-pointer select-none">📊 Data Visualization Projects (Click to Expand)</summary>
+      <div class="mt-8">
+        <div class="swiper vizSwiper">
+          <div class="swiper-wrapper">
+            <!-- Example Project Slide -->
+            <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img src="images/data_visualization_projects/1_scatter_plot.png" alt="Scatter Plot">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">📈 Basic Scatter Plot</h3>
+                <p class="mb-2 text-sm">Visualizes correlation between two continuous variables using Matplotlib.</p>
+                <a href="projects/data_visualization_projects/1_scatter_plot.html" class="text-blue-400 hover:underline">View Code</a>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+          <div class="swiper-button-prev absolute left-0 text-white"></div>
+          <div class="swiper-button-next absolute right-0 text-white"></div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </details>
+
+    <!-- Software Development Projects Carousel -->
+    <details class="bg-gray-800 rounded-lg shadow-md p-6 mb-8 open:bg-gray-800 transition-all duration-300">
+      <summary class="text-2xl font-bold text-center cursor-pointer select-none">💻 Software Development Projects (Click to Expand)</summary>
+      <div class="mt-8">
+        <div class="swiper softwareSwiper">
+          <div class="swiper-wrapper">
+            <!-- Example Project Slide -->
+            <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
+              <img src="images/software_development_projects/1_calculator.png" alt="Calculator">
+              <div class="p-4">
+                <h3 class="text-xl font-semibold mb-2">💻 Calculator</h3>
+                <p class="mb-2 text-sm">Supports multiple operations and keeps a history of calculations.</p>
+                <a href="projects/software_development_projects/1_calculator.html" class="text-blue-400 hover:underline">View Code</a>
+              </div>
+            </div>
+            <!-- Add more slides as needed -->
+          </div>
+          <div class="swiper-button-prev absolute left-0 text-white"></div>
+          <div class="swiper-button-next absolute right-0 text-white"></div>
+          <div class="swiper-pagination mt-4"></div>
+        </div>
+      </div>
+    </details>
+
+  </div>
 </section>
 
 <!-- Resume Section -->
 <section id="resume" class="py-20 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-6">Resume</h2>
-    <div class="flex justify-center">
-        <embed
-                src="Ishita_Goswami_Machine_Learning_.pdf"
-                type="application/pdf"
-                width="70%"
-                height="600px"
-                class="rounded-lg shadow-lg"
-        />
-    </div>
+  <h2 class="text-3xl font-bold mb-6">Resume</h2>
+  <div class="flex justify-center">
+    <embed src="Ishita_Goswami_Machine_Learning_.pdf" type="application/pdf" width="70%" height="600px" class="rounded-lg shadow-lg"/>
+  </div>
 </section>
 
 <!-- Education Section -->
 <section id="education" class="py-20">
-    <h2 class="text-3xl font-bold text-center mb-6">Educational Background</h2>
-    <p class="text-center">table here</p>
+  <h2 class="text-3xl font-bold text-center mb-6">Educational Background</h2>
+  <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto px-4">
+    <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+      <h3 class="font-semibold text-xl">Master's in Bioinformatics</h3>
+      <p>University of Manchester, 2023</p>
+    </div>
+    <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+      <h3 class="font-semibold text-xl">Bachelor's in Microbial & Food Technology</h3>
+      <p>Panjab University, 2020</p>
+    </div>
+  </div>
 </section>
 
 <!-- Experience Section -->
 <section id="experience" class="py-20 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-6">Experience</h2>
-    <p>Professional experiences.</p>
+  <h2 class="text-3xl font-bold mb-6">Experience</h2>
+  <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8 px-4">
+    <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+      <h3 class="font-semibold text-xl">Data Analyst Intern</h3>
+      <p>Independent Researcher, 2024</p>
+    </div>
+    <div class="bg-gray-700 p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300">
+      <h3 class="font-semibold text-xl">Research Assistant</h3>
+      <p>Bioinformatics Projects, 2022–2023</p>
+    </div>
+  </div>
 </section>
 
 <!-- Skills Section -->
-<section id="skills" class="py-20 max-w-4xl mx-auto px-4 text-left ">
-    <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
-    <p>
-        <ul>
-            <li><b>Programming Languages:</b> Python(numpy, scikit-learn, matplotlib, pandas, NetworkX), R, Unix, Linux commands, Bash, Shell scripting</li>
-            <li><b>Machine Learning:</b> Supervised and Unsupervised learning, PCA, Logistic and Linear Regression, Clustering, Decision Trees, Neural Networks</li>
-            <li><b>Web and Mobile Development:</b> HTML, CSS, TypeScript, JavaScript, ReactNative</li>
-            <li><b>Data Preparation:</b> Web scraping, Data wrangling, Data cleaning</li>
-            <li><b>Version Control:</b> Git</li>
-            <li><b>Bioinformatics:</b> Databases, BLAST, NGS analysis, Phylogenetic analysis, sequence analysis, network analysis, network and metabolic modelling</li>
-            <li><b>Statistics / Data Analysis:</b> R Studio, data visualization, statistical modelling </li>
-            <li><b>Next Generation Sequencing:</b> Illumina, Nanopore, PacBio reads, FASTQ quality control, Genome Assembly, Sequence alignment, Gene Annotation, Gene Mapping, Visualization</li>
-            <li><b>Collaboration and Soft skills:</b> Active listening, teamwork, time management.</li>
-        </ul>
-    </p>
+<section id="skills" class="py-20 max-w-4xl mx-auto px-4">
+  <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
+  <ul class="list-disc list-inside space-y-2">
+    <li><b>Programming:</b> Python (numpy, pandas, scikit-learn), R, Bash, Linux, HTML, CSS, JS, TypeScript, React Native</li>
+    <li><b>Machine Learning:</b> Supervised & Unsupervised Learning, PCA, Regression, Clustering, Decision Trees, Neural Networks</li>
+    <li><b>Data Prep:</b> Web scraping, Data cleaning, Wrangling</li>
+    <li><b>Bioinformatics:</b> NGS analysis, BLAST, Phylogenetics, Network/Metabolic Modelling</li>
+    <li><b>Statistics & Data Visualization:</b> R Studio, Matplotlib, Seaborn, Plotly</li>
+    <li><b>Collaboration:</b> Teamwork, Time Management, Active Listening</li>
+  </ul>
 </section>
 
 <!-- Contact Section -->
 <section id="contact" class="py-20 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <form action="send_mail.php" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" required>
-            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" required>
-            <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white" rows="5" required></textarea>
-            <div class="flex justify-center">
-                <button type="submit" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition text-white text-center flex items-center justify-center gap-3 text-xl">
-                    <a href="mailto::ishita_goswami@outlook.com?subject=Message from Portfolio&body=Hi Ishita," class="inline-block text-white text-2xl hover:text-red-500"><i class="fas fa-envelope" aria-hidden="true"></i></a> &nbsp; Send Message
-                </button>
-            </div>
-        </form>
-    </div>
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
+    <form action="send_mail.php" method="POST" class="space-y-4">
+      <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" required>
+      <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" required>
+      <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white" rows="5" required></textarea>
+      <button type="submit" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition text-white text-xl flex items-center gap-3 justify-center">
+        <i class="fas fa-envelope text-2xl"></i> Send Message
+      </button>
+    </form>
+  </div>
 </section>
 
 <!-- Footer -->
-<footer class="py-4 bg-gray-900 text-center">
-    <p>2025 Ishita Goswami.</p>
+<footer class="py-6 bg-gray-900 text-center">
+  <p class="mb-2">&copy; 2026 Ishita Goswami. All Rights Reserved.</p>
+  <div class="flex justify-center space-x-4">
+    <a href="https://github.com/ishiigos" class="hover:text-blue-400"><i class="fab fa-github"></i></a>
+    <a href="https://www.linkedin.com/in/ishita-goswami-21aug" class="hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
+  </div>
 </footer>
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
-new Swiper('.mySwiper', {
+  // Data Visualization Swiper
+  new Swiper('.vizSwiper', {
     loop: true,
-    speed: 1000,
-    spaceBetween: 30,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-    }
-});
+    slidesPerView: 1,
+    breakpoints: { 768:{slidesPerView:2}, 1024:{slidesPerView:3} },
+    navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'},
+    pagination:{el:'.swiper-pagination', clickable:true}
+  });
+
+  // Software Development Swiper
+  new Swiper('.softwareSwiper', {
+    loop: true,
+    slidesPerView: 1,
+    breakpoints: { 768:{slidesPerView:2}, 1024:{slidesPerView:3} },
+    navigation:{nextEl:'.swiper-button-next', prevEl:'.swiper-button-prev'},
+    pagination:{el:'.swiper-pagination', clickable:true}
+  });
+
+  // Active navigation link on scroll
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('nav a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 80;
+      if(scrollY >= sectionTop) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => link.classList.remove('text-blue-400','active'));
+    document.querySelector(`nav a[href="#${current}"]`)?.classList.add('text-blue-400','active');
+  });
 </script>
 
 </body>
 </html>
-
-
-
-
