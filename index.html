@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-78Z422E0J5"></script>
     <script>
@@ -46,6 +47,7 @@
     <meta name="robots" content="index, follow">
     <meta name="author" content="Ishita Goswami">
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <!-- Swiper CSS -->
@@ -93,108 +95,278 @@
 
     </style>
 </head>
-<body class="bg-gray-900 text-white font-sans">
-<!-- Navigation Bar -->
-<nav class="fixed w-full bg-gray-800 p-4 shadow-md">
-    <div class="flex justify-center space-x-6">
-        <a href="#about" class="text-white hover:text-blue-400">About Me</a>
-        <a href="#projects" class="text-white hover:text-blue-400">Projects</a>
-        <a href="#education" class="text-white hover:text-blue-400">Education</a>
-        <a href="#experience" class="text-white hover:text-blue-400">Experience</a>
-        <a href="#skills" class="text-white hover:text-blue-400">Skills</a>
-        <a href="#resume" class="text-white hover:text-blue-400">Resume</a>
+
+<body class="relative">
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Menu Overlay -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="sideMenu">
+        <div class="p-6 border-b border-white border-opacity-20">
+            <div class="flex items-center justify-between">
+                <h2 class="text-2xl font-bold text-white">Menu</h2>
+                <button id="closeMenu" class="text-white text-2xl hover:text-secondary transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+        </div>
+        <nav class="mt-4">
+            <a href="#about" class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>About</span>
+            </a>
+            <a href="#projects" class="menu-item">
+                <i class="fas fa-briefcase"></i>
+                <span>Projects</span>
+            </a>
+            <a href="#skills" class="menu-item">
+                <i class="fas fa-code"></i>
+                <span>Skills</span>
+            </a>
+            <a href="#resume" class="menu-item">
+                <i class="fas fa-file-alt"></i>
+                <span>Resume</span>
+            </a>
+            <a href="#contact" class="menu-item">
+                <i class="fas fa-envelope"></i>
+                <span>Contact</span>
+            </a>
+        </nav>
+        <div class="absolute bottom-8 left-0 right-0 px-6">
+            <div class="flex justify-center gap-6">
+                <a href="https://github.com/ishiigos" class="text-white hover:text-secondary text-2xl transition">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/ishita-goswami-21aug"
+                    class="text-white hover:text-secondary text-2xl transition">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://linktr.ee/ishita_goswami" class="text-white hover:text-secondary text-2xl transition">
+                    <i class="fas fa-link"></i>
+                </a>
+            </div>
+        </div>
     </div>
-</nav>
 
-<!-- Social Media Sidebar -->
-<div class="fixed top-1/3 right-4 grid grid-rows-5 gap-4">
-    <a href="https://github.com/ishiigos" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-github"></i></a>
-    <a href="#" class="text-white text-2xl hover:text-pink-500"><i class="fab fa-instagram"></i></a>
-    <a href="https://www.linkedin.com/in/ishita-goswami-21aug" class="text-white text-2xl hover:text-blue-600"><i class="fab fa-linkedin"></i></a>
-    <a href="mailto:ishita_goswami@outlook.com" class="text-white text-2xl hover:text-red-500"><i class="fas fa-envelope"></i></a>
-    <a href="#" class="text-white text-2xl hover:text-blue-400"><i class="fab fa-twitter"></i></a>
-</div>
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white shadow-md z-50">
+        <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
+            <div class="flex items-center gap-4">
+                <button id="hamburgerBtn" class="hamburger text-primary">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+                <div class="text-xl font-bold text-primary">Ishita Goswami</div>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="hover:text-secondary transition">About</a>
+                <a href="#projects" class="hover:text-secondary transition">Projects</a>
+                <a href="#skills" class="hover:text-secondary transition">Skills</a>
+                <a href="#resume" class="hover:text-secondary transition">Resume</a>
+                <a href="#contact" class="hover:text-secondary transition">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section
+        class="hero-bg h-screen flex flex-col items-center justify-center text-center px-6 md:px-20 relative overflow-hidden">
+        <canvas id="networkCanvas" class="absolute inset-0 z-0"></canvas>
+        <!-- Animated Particles -->
 
 
-<!-- Hero Section -->
-<section class="h-screen flex flex-col justify-center items-center text-center">
-    <h1 class="text-5xl font-bold mb-4">Ishita Goswami</h1>
-    <p class="text-xl mb-6">Bioinformatician | Web Developer | Coder</p>
-    <a href="#projects" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition">View My Work</a>
-</section>
+        <div class="relative z-10">
+            <img src="Picture.jpeg" alt="Ishita Goswami"
+                class="rounded-full w-64 h-64 object-cover mx-auto shadow-2xl border-4 border-white mb-8">
+            <h1 class="text-5xl md:text-6xl font-bold text-white mb-4">Ishita Goswami</h1>
+            <p class="text-xl md:text-2xl text-white mb-8">Bioinformatician | Software Developer | Data Analyst</p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#projects"
+                    class="bg-secondary text-primary px-8 py-3 rounded-full font-semibold hover:bg-secondary-hover transition shadow-lg">View
+                    Projects</a>
+                <a href="#resume"
+                    class="border-2 border-white text-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-primary transition shadow-lg">Download
+                    Resume</a>
+            </div>
+        </div>
 
-<!-- About Section -->
-<section id="about" class="py-20 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4 text-left">
-        <h2 class="text-3xl font-bold mb-6 text-center">About Me</h2>
-        <p class="text-lg">
-        <h1 class="text-2xl font-bold mb-6 text-center"> 🙋🏻‍♀️ Hey there! My name is Ishita Goswami, Welcome to my website</h1>
-        <h3 class="text-1xl font-bold mb-6 text-center"> A little about me: </h3>
-        ✧ Graduate in STEM disciplines:
-        <br>
-        &emsp;&emsp;✦ Master's in Bioinformatics & Systems Biology from the University of Manchester
-        <br>
-        &emsp;&emsp;✦ Bachelor's in Microbial & Food Technology from Panjab University
-        <br><br>
-        ✧ 👩🏻‍💻 Actively looking for roles in Bioinformatics, Software Development, Data Analysis and related fields in the UK. I am eager to contribute to innovative projects.
-        <br><br>
-        ✧ 🖥️ Currently working on multiple projects in pursuit of learning and keeping up with advancements in software and bioinformatics
-        <br><br>
-        ✧ 🔬 Interests:
-        <ul>
-            <li>Evolutionary biology mechanisms,</li>
-            <li>Artificial Intelligence and Machine Learning in Biology,</li>
-            <li>Exploring biological data patterns,</li>
-            <li>Role of bioinformatics for advancements in genomics and medicine.</li>
-            <li>Biological systems,</li>
-        </ul>
-        </p>
-    </div>
-</section>
+        <!-- Scroll Down Indicator -->
+        <div class="absolute bottom-8 animate-bounce">
+            <i class="fas fa-chevron-down text-white text-2xl"></i>
+        </div>
+    </section>
 
-<!-- Projects Section -->
-<section id="projects" class="py-20">
-    <div class="max-w-5xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
-        <p class="text-center mb-12"><b>Academic Projects</b></p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Linyphiid Identification Key</h3>
+    <!-- About Section -->
+    <section id="about" class="max-w-6xl mx-auto py-20 px-6 md:px-0">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12">About Me</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <div>
+                <p class="mb-4 text-lg">🙋🏻‍♀️ Hey there! My name is Ishita Goswami, welcome to my portfolio.</p>
+                <p class="mb-4 text-lg">🎓 Education:</p>
+                <ul class="list-disc ml-6 mb-4">
+                    <li>Master's in Bioinformatics & Systems Biology, University of Manchester</li>
+                    <li>Bachelor's in Microbial & Food Technology, Panjab University</li>
+                </ul>
+                <p class="mb-4 text-lg">💻 Actively seeking roles in Bioinformatics, Software Development, and Data
+                    Analysis in
+                    the UK.</p>
+                <p class="mb-4 text-lg">🔬 Interests include Evolutionary Biology, AI in Biology, Data Analysis, and
+                    Genomics
+                    research.</p>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="bg-primary text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2">Projects Completed</h3>
+                    <p>10+ Academic & Portfolio Projects showcasing Bioinformatics and Software Development skills.</p>
+                </div>
+                <div class="bg-primary text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                    <h3 class="text-xl font-bold mb-2">Technical Skills</h3>
+                    <p>Python, R, ML, NGS analysis, Web Development, Data Visualization, Git</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="bg-gray-100 py-20 px-6 md:px-0">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12">Projects</h2>
+
+        <!-- Tabs -->
+        <div class="flex justify-center mb-8 gap-4">
+            <button class="project-tab px-6 py-2 bg-primary text-white rounded-full shadow-md"
+                data-target="academic">Academic</button>
+            <button class="project-tab px-6 py-2 border-2 border-primary text-primary rounded-full"
+                data-target="portfolio">Portfolio</button>
+        </div>
+
+        <!-- Academic Projects -->
+        <div id="academic"
+            class="project-grid max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">Linyphiid Identification Key</h3>
+                    <i class="fas fa-spider text-primary text-2xl"></i>
+                </div>
                 <p class="mb-4">A key to identify spider species based on character selection by the user.</p>
-                <a href="https://github.com/ishiigos/SpiderIdentification" class="text-blue-400 hover:underline">View Project</a>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Python</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Biology</span>
+                </div>
+                <a href="https://github.com/ishiigos/SpiderIdentification"
+                    class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">BUSCO phylogenetics analysis</h3>
-                <p class="mb-4">Python and Linux pipeline for phylogenetics tree construction for <i>Chlorella</i> genomes</p>
-                <a href="https://github.com/ishiigos/BUSCO_PhylogenticsAnalysis" class="text-blue-400 hover:underline">View Project</a>
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">BUSCO Phylogenetics Analysis</h3>
+                    <i class="fas fa-dna text-primary text-2xl"></i>
+                </div>
+                <p class="mb-4">Python and Linux pipeline for phylogenetics tree construction for <i>Chlorella</i>
+                    genomes</p>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Python</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Linux</span>
+                </div>
+                <a href="https://github.com/ishiigos/BUSCO_PhylogenticsAnalysis"
+                    class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">AI / ML Tool for Antibiotic resistance in Bacteria</h3>
-                <p class="mb-4">-Brief description</p>
-                <a href="#" class="text-blue-400 hover:underline">View Project</a>
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">AI/ML Antibiotic Resistance Tool</h3>
+                    <i class="fas fa-brain text-primary text-2xl"></i>
+                </div>
+                <p class="mb-4">Predicts bacterial resistance using machine learning methods.</p>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">ML</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">AI</span>
+                </div>
+                <a href="#" class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-        </div><br><br>
-        <p class="text-center mb-12"><b>Portfolio Projects</b></p>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Personalised Healthcare Recommendations</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/personalised_healthcare_recommendations" class="text-blue-400 hover:underline">View Project</a>
+        </div>
+
+        <!-- Portfolio Projects -->
+        <div id="portfolio"
+            class="project-grid max-w-6xl mx-auto hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">Personalised Healthcare</h3>
+                    <i class="fas fa-heartbeat text-primary text-2xl"></i>
+                </div>
+                <p class="mb-4">ML-based healthcare recommendation system with personalized insights.</p>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Python</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">ML</span>
+                </div>
+                <a href="https://github.com/ishiigos/personalised_healthcare_recommendations"
+                    class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">OCD Patient Dataset: Demographics and Clinical Data</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/OCD_patient_dataset" class="text-blue-400 hover:underline">View Project</a>
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">OCD Patient Dataset</h3>
+                    <i class="fas fa-chart-line text-primary text-2xl"></i>
+                </div>
+                <p class="mb-4">Statistical analysis and visualization of OCD patient data.</p>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">R</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Stats</span>
+                </div>
+                <a href="https://github.com/ishiigos/OCD_patient_dataset"
+                    class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Drugs, Side Effects and Medical Conditions</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/drugs_side_effects" class="text-blue-400 hover:underline">View Project</a>
+            <div class="project-card bg-white rounded-lg shadow-lg p-6 transition-transform duration-300">
+                <div class="flex items-center justify-between mb-4">
+                    <h3 class="text-xl font-bold">Drugs & Side Effects</h3>
+                    <i class="fas fa-pills text-primary text-2xl"></i>
+                </div>
+                <p class="mb-4">Analysis of drugs, side effects, and medical conditions relationships.</p>
+                <div class="flex gap-2 mb-4">
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Python</span>
+                    <span class="bg-gray-200 text-xs px-2 py-1 rounded">Data</span>
+                </div>
+                <a href="https://github.com/ishiigos/drugs_side_effects"
+                    class="text-primary hover:text-secondary transition font-semibold">View Project →</a>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">DLife Expectancy Analysis</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/life_expectancy_analysis" class="text-blue-400 hover:underline">View Project</a>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="max-w-6xl mx-auto py-20 px-6 md:px-0">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12">Skills & Expertise</h2>
+
+        <div class="grid md:grid-cols-2 gap-8 mb-12">
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4 text-primary">Programming Languages</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Python</span>
+                            <span class="text-sm text-gray-600">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">R</span>
+                            <span class="text-sm text-gray-600">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Bash/Linux</span>
+                            <span class="text-sm text-gray-600">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
                 <h3 class="text-xl font-semibold mb-2">Climate Change Modelling</h3>
@@ -430,66 +602,58 @@
     </div>
 </section>
 
-<!-- Resume Section -->
-<section id="resume" class="py-20 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-6">Resume</h2>
-    <div class="flex justify-center">
-        <embed
-                src="Ishita_Goswami_Machine_Learning_.pdf"
-                type="application/pdf"
-                width="70%"
-                height="600px"
-                class="rounded-lg shadow-lg"
-        />
-    </div>
-</section>
+    <!-- Resume Section -->
+    <section id="resume" class="bg-gray-100 py-20 px-6 md:px-0 text-center">
+        <h2 class="text-4xl font-bold text-primary mb-12">Resume</h2>
+        <a href="Ishita_Goswami_Resume.pdf"
+            class="bg-primary text-white px-8 py-3 rounded-full font-semibold hover:bg-secondary transition shadow-lg inline-block">
+            <i class="fas fa-download mr-2"></i>Download Resume
+        </a>
+        <div class="mt-8 flex justify-center">
+            <embed src="Ishita_Goswami_Resume.pdf" type="application/pdf" width="80%" height="600px"
+                class="rounded-lg shadow-lg" />
+        </div>
+    </section>
 
-<!-- Education Section -->
-<section id="education" class="py-20">
-    <h2 class="text-3xl font-bold text-center mb-6">Educational Background</h2>
-    <p class="text-center">table here</p>
-</section>
-
-<!-- Experience Section -->
-<section id="experience" class="py-20 bg-gray-800 text-center">
-    <h2 class="text-3xl font-bold mb-6">Experience</h2>
-    <p>Professional experiences.</p>
-</section>
-
-<!-- Skills Section -->
-<section id="skills" class="py-20 max-w-4xl mx-auto px-4 text-left ">
-    <h2 class="text-3xl font-bold mb-6 text-center">Skills</h2>
-    <p>
-        <ul>
-            <li><b>Programming Languages:</b> Python(numpy, scikit-learn, matplotlib, pandas, NetworkX), R, Unix, Linux commands, Bash, Shell scripting</li>
-            <li><b>Machine Learning:</b> Supervised and Unsupervised learning, PCA, Logistic and Linear Regression, Clustering, Decision Trees, Neural Networks</li>
-            <li><b>Web and Mobile Development:</b> HTML, CSS, TypeScript, JavaScript, ReactNative</li>
-            <li><b>Data Preparation:</b> Web scraping, Data wrangling, Data cleaning</li>
-            <li><b>Version Control:</b> Git</li>
-            <li><b>Bioinformatics:</b> Databases, BLAST, NGS analysis, Phylogenetic analysis, sequence analysis, network analysis, network and metabolic modelling</li>
-            <li><b>Statistics / Data Analysis:</b> R Studio, data visualization, statistical modelling </li>
-            <li><b>Next Generation Sequencing:</b> Illumina, Nanopore, PacBio reads, FASTQ quality control, Genome Assembly, Sequence alignment, Gene Annotation, Gene Mapping, Visualization</li>
-            <li><b>Collaboration and Soft skills:</b> Active listening, teamwork, time management.</li>
-        </ul>
-    </p>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="py-20 bg-gray-800">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-        <form action="send_mail.php" method="POST" class="space-y-4">
-            <input type="text" name="name" placeholder="Your Name" class="w-full p-3 rounded bg-gray-700 text-white" required>
-            <input type="email" name="email" placeholder="Your Email" class="w-full p-3 rounded bg-gray-700 text-white" required>
-            <textarea name="message" placeholder="Your Message" class="w-full p-3 rounded bg-gray-700 text-white" rows="5" required></textarea>
-            <div class="flex justify-center">
-                <button type="submit" class="px-6 py-3 bg-blue-500 rounded-full hover:bg-blue-600 transition text-white text-center flex items-center justify-center gap-3 text-xl">
-                    <a href="mailto::ishita_goswami@outlook.com?subject=Message from Portfolio&body=Hi Ishita," class="inline-block text-white text-2xl hover:text-red-500"><i class="fas fa-envelope" aria-hidden="true"></i></a> &nbsp; Send Message
+    <!-- Contact Section -->
+    <section id="contact" class="max-w-6xl mx-auto py-20 px-6 md:px-0">
+        <h2 class="text-4xl font-bold text-center text-primary mb-12">Get In Touch</h2>
+        <div class="grid md:grid-cols-2 gap-12">
+            <form action="send_mail.php" method="POST" class="flex flex-col gap-4">
+                <input type="text" name="name" placeholder="Your Name"
+                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                    required>
+                <input type="email" name="email" placeholder="Your Email"
+                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                    required>
+                <textarea name="message" rows="5" placeholder="Your Message"
+                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                    required></textarea>
+                <button type="submit"
+                    class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition shadow-lg">
+                    <i class="fas fa-paper-plane mr-2"></i>Send Message
                 </button>
+            </form>
+            <div class="flex flex-col gap-6 items-center justify-center">
+                <div class="bg-white p-6 rounded-lg shadow-lg w-full">
+                    <p class="text-lg mb-4"><i class="fas fa-envelope text-primary mr-3"></i> ishita_goswami@outlook.com
+                    </p>
+                    <p class="text-lg"><i class="fas fa-map-marker-alt text-primary mr-3"></i> Manchester, UK</p>
+                </div>
+                <div class="flex gap-6 mt-4">
+                    <a href="https://github.com/ishiigos"
+                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                            class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/ishita-goswami-21aug"
+                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                            class="fab fa-linkedin"></i></a>
+                    <a href="https://linktr.ee/ishita_goswami"
+                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                            class="fas fa-link"></i></a>
+                </div>
             </div>
-        </form>
-    </div>
-</section>
+        </div>
+    </section>
 
 <!-- Footer -->
 <footer class="py-4 bg-gray-900 text-center">
@@ -526,6 +690,7 @@ new Swiper('.mySwiper', {
 </script>
 
 </body>
+
 </html>
 
 
