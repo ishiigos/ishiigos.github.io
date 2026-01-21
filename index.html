@@ -2,97 +2,232 @@
 <html lang="en">
 
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-78Z422E0J5"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-78Z422E0J5');
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Ishita Goswami",
-      "url": "https://ishiigos.github.io",
-      "image": "ishitagoswami.jpg",
-      "sameAs": [
-        "https://github.com/ishiigos",
-        "https://www.linkedin.com/in/ishita-goswami-21aug/",
-        "https://linktr.ee/ishita_goswami",
-        "https://www.kaggle.com/ishiigoswami",
-        "https://in.bold.pro/my/ishitagoswami-250729170405",
-        "https://substack.com/@ishiigos?utm_source=user-menu",
-        "https://in.bold.pro/my/ishitagoswami-250729170405",
-        "https://medium.com/@ishiigos"
-      ],
-      "jobTitle": "Bioinformatician | Software Developer | Data Analyst",
-      "worksFor": {
-        "@type": "Unified Mentor",
-        "name": "Independent Researcher, Data Analyst Intern"
-      },
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Manchester",
-        "addressCountry": "UK"
-      }
-    }
-    </script>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ishita Goswami | Bioinformatician & Developer</title>
-    <meta name="description" content=" Official portfolio of Ishita Goswami (ishiigos) – bioinformatician, software developer, and data science researcher.">
-    <meta name="robots" content="index, follow">
+    <meta name="description"
+        content="Portfolio of Ishita Goswami – Bioinformatician, Software Developer, and Data Analyst">
     <meta name="author" content="Ishita Goswami">
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
     <style>
+        /* Custom Colors & Typography */
+        :root {
+            --primary: #0D3B66;
+            --secondary: #D4AF37;
+            --secondary-hover: #B8941F;
+            --accent: #FAF0CA;
+            --bg-dark: #0D3B66;
+            --text-dark: #333;
+            --text-light: #fff;
+        }
 
-    .swiper {
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--accent);
+            color: var(--text-dark);
+        }
 
-    .swiper-button-next,
-    .swiper-button-prev {
-      color: white;
-      z-index: 999;
-      font-size: 24px;
-    }
+        /* Hero Section */
+        .hero-bg {
+            background: linear-gradient(135deg, #0D3B66, #FAF0CA);
+        }
 
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      font-size: 24px;
-    }
+        @keyframes float {
 
-    .swiper-slide {
-        background-color: #1f2937; /* Tailwind gray-800 */
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-start; /* or center if you prefer */
-        align-items: stretch;
-        height: 100%; /* ensure full height usage */
-        min-height: 400px; /* adjust as needed */
-        max-height: 100%;
-    }
+            0%,
+            100% {
+                transform: translateY(0) translateX(0);
+            }
 
-    .swiper-slide img {
-        height: 180px; /* fixed height for uniformity */
-        object-fit: cover;
-        width: 100%;
-    }
+            25% {
+                transform: translateY(-50px) translateX(30px);
+            }
 
+            50% {
+                transform: translateY(-100px) translateX(-30px);
+            }
+
+            75% {
+                transform: translateY(-50px) translateX(30px);
+            }
+        }
+
+        /* Card Hover */
+        .project-card {
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Skill Progress Bars */
+        .skill-bar {
+            height: 8px;
+            background: #e0e0e0;
+            border-radius: 10px;
+            overflow: hidden;
+            margin-top: 0.5rem;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 10px;
+            animation: fillBar 1.5s ease-out;
+        }
+
+        @keyframes fillBar {
+            from {
+                width: 0;
+            }
+        }
+
+        /* Smooth Scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Side Menu Styles */
+        .side-menu {
+            position: fixed;
+            top: 0;
+            left: -300px;
+            width: 300px;
+            height: 100vh;
+            background: linear-gradient(180deg, #0D3B66, #1a5a8f);
+            z-index: 100;
+            transition: left 0.3s ease-in-out;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .side-menu.active {
+            left: 0;
+        }
+
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .menu-item {
+            padding: 1rem 2rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: background 0.2s ease;
+            border-left: 4px solid transparent;
+        }
+
+        .menu-item:hover {
+            background: rgba(212, 175, 55, 0.2);
+            border-left-color: var(--secondary);
+        }
+
+        .menu-item i {
+            font-size: 1.2rem;
+            width: 24px;
+        }
+
+        .hamburger {
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .hamburger:hover {
+            transform: scale(1.1);
+        }
+
+        /* Typing Animation */
+        .typing-text::after {
+            content: '|';
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Timeline Styles */
+        .timeline-item {
+            position: relative;
+            padding-left: 2rem;
+            border-left: 2px solid var(--secondary);
+            padding-bottom: 2rem;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -6px;
+            top: 0;
+            width: 12px;
+            height: 12px;
+            background: var(--secondary);
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px var(--accent);
+        }
+
+        /* Scroll Progress Bar */
+        .scroll-progress {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 1000;
+            transition: width 0.1s ease;
+        }
+
+        #networkCanvas {
+            width: 100%;
+            height: 100%;
+        }
+
+        #networkCanvas {
+            pointer-events: none;
+        }
+
+        .fade-text {
+            position: absolute;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+            font-size: 3rem;
+            font-weight: bold;
+            color: #FFD700;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
     </style>
 </head>
 
@@ -368,239 +503,59 @@
                     </div>
                 </div>
             </div>
-            <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
-                <h3 class="text-xl font-semibold mb-2">Climate Change Modelling</h3>
-                <p class="mb-4">-Brief description-</p>
-                <a href="https://github.com/ishiigos/climate_change_modeling" class="text-blue-400 hover:underline">View Project</a>
-            </div>
-        </div><br><br>
-        <details id="vizDetails" class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
-            <summary class="text-2xl font-bold text-center cursor-pointer text-white select-none">
-                📊 Data Visualization Projects (Click to Expand)
-            </summary>
-            <div class="mt-8">
-                <!-- Swiper Carousel Start -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/1_scatter_plot.png" alt="Scatter Plot" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Basic Scatter Plot</h3>
-                                <p class="mb-2 text-sm">Visualizes correlation between two continuous variables using Matplotlib.</p>
-                                <a href="projects/data_visualization_projects/1_scatter_plot.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
+
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <h3 class="text-xl font-bold mb-4 text-primary">Bioinformatics & Data Science</h3>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">NGS Analysis</span>
+                            <span class="text-sm text-gray-600">Advanced</span>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/2_bar_chart.png" alt="Bar Chart" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📊 Bar Chart</h3>
-                                <p class="mb-2 text-sm">Compares sales quantities across product categories.</p>
-                                <a href="projects/data_visualization_projects/2_bar_chart.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 3 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/3_line_plot_time_series.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Line Plot</h3>
-                                <p class="mb-4">Tracks daily stock prices over time.</p>
-                                <a href="projects/data_visualization_projects/3_line_plot_time_series.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/4_heatmap_correlation_matrix.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Heatmap for Correlation Matrix</h3>
-                                <p class="mb-4">Displays feature correlations in the Iris dataset using Seaborn.</p>
-                                <a href="projects/data_visualization_projects/4_heatmap_correlation_matrix.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/5_interactive_bubble_chart.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Bubble Chart (Plotly)</h3>
-                                <p class="mb-4">Uses size and color to represent multivariate relationships from Gapminder-like data.</p>
-                                <a href="projects/data_visualization_projects/5_interactive_bubble_chart.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                         </div>
-                        <!-- 6 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/6_distribution_plot.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Violin Plot</h3>
-                                <p class="mb-4">Visualizes the distribution of bill length by penguin species and sex using Seaborn.</p>
-                                <a href="projects/data_visualization_projects/6_distribution_plot.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/7_treemap.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Treemap</h3>
-                                <p class="mb-4">Represents hierarchical sales data using squarify.</p>
-                                <a href="projects/data_visualization_projects/7_treemap.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/8_geospatial_cloropleth_map.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Geospatial Cloropleth Map</h3>
-                                <p class="mb-4">Interactive US unemployment map using Folium and GeoJSON.</p>
-                                <a href="projects/data_visualization_projects/8_geospatial_cloropleth_map.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/9_network_graph_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Network Graph</h3>
-                                <p class="mb-4">Force-directed graph of synthetic connections with NetworkX.</p>
-                                <a href="projects/data_visualization_projects/9_network_graph.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/10_plotly_dashboard_advanced.py.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard</h3>
-                                <p class="mb-4">Dash app analyzing restaurant tips using linked Plotly plots.</p>
-                                <a href="projects/data_visualization_projects/10_plotly_dashboard.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10a -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/data_visualization_projects/10a_plotly_dashboard_iris_advanced.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">📈 Interactive Dashboard - Flower Data</h3>
-                                <p class="mb-4">Dash app analyzing flowers using linked Plotly plots.</p>
-                                <a href="projects/data_visualization_projects/10a_plotly_dashboard_iris.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
                         </div>
                     </div>
-                    <!-- Navigation Arrows -->
-                    <div class="swiper-button-prev absolute left-0 text-white"></div>
-                    <div class="swiper-button-next absolute right-0 text-white"></div>
-
-                    <!-- Pagination (dots) -->
-                    <div class="swiper-pagination mt-4"></div>
-                </div>
-            </div>
-        </details><br>
-        <details id="vizDetails" class="bg-gray-800 rounded-lg shadow-md p-6 open:bg-gray-800 transition-all duration-300">
-            <summary class="text-2xl font-bold text-center cursor-pointer text-white select-none">
-                💻 Software Development Projects (Click to Expand)
-            </summary>
-            <div class="mt-8">
-                <!-- Swiper Carousel Start -->
-                <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
-                        <!-- Project 1 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/1_calculator.png" alt="Calculator" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Calculator</h3>
-                                <p class="mb-2 text-sm"> A calculator that supports multiple operations, handles invalid input gracefully, and keeps a history of calculations in a file.</p>
-                                <a href="projects/software_development_projects/1_calculator.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Machine Learning</span>
+                            <span class="text-sm text-gray-600">Intermediate</span>
                         </div>
-                        <!-- Project 2 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/2_to_do_list_manager_run.png" alt="To Do List" class="w-full h-48 object-cover">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 To Do List Manager</h3>
-                                <p class="mb-2 text-sm">A more robust to-do list that saves tasks to a file, allows setting priorities, and filters tasks.</p>
-                                <a href="projects/software_development_projects/2_to_do_list_manager.html" class="text-blue-400 hover:underline">View Code</a>
-                            </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
                         </div>
-                        <!-- 3 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/3_number_guessing_game.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Number Guessing Game</h3>
-                                <p class="mb-4">The computer generates a random number, and the user tries to guess it. The game provides hints (higher/lower).</p>
-                                <a href="projects/software_development_projects/3_number_guessing_game.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 4 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/4_password_generator.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Password Generator</h3>
-                                <p class="mb-4">Generates a random password based on user-specified length and character types (letters, numbers, symbols).</p>
-                                <a href="projects/software_development_projects/4_password_generator.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 5 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/5_rock_paper_scissors.py.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Rock Paper Scissors</h3>
-                                <p class="mb-4">A classic game where the user plays against the computer.</p>
-                                <a href="projects/software_development_projects/5_rock_paper_scissors.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                         </div>
-                        <!-- 6 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/6_unit_convertor.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Unit Converter</h3>
-                                <p class="mb-4">Converts between different units (e.g., Celsius to Fahrenheit, meters to feet).</p>
-                                <a href="projects/software_development_projects/6_unit_convertor.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 7 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/7_text_editor.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Text Editor</h3>
-                                <p class="mb-4">A command-line tool to create, read, and append to text files.</p>
-                                <a href="projects/software_development_projects/7_text_editor.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 8 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/8_contact_book.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Contact Book</h3>
-                                <p class="mb-4">Stores and manages contacts (name and phone number) in memory.</p>
-                                <a href="projects/software_development_projects/8_contact_book.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 9 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/9_dice_roll.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Dice Roll</h3>
-                                <p class="mb-4">Simulates rolling a dice and displays the result.</p>
-                                <a href="projects/software_development_projects/9_dice_roll.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>
-                        <!-- 10 -->
-                        <div class="swiper-slide bg-gray-800 rounded-lg overflow-hidden shadow-lg">
-                            <img src="images/software_development_projects/10_quiz_game.png" alt="Scatter Plot Output" class="rounded mb-4">
-                            <div class="p-4">
-                                <h3 class="text-xl font-semibold mb-2">💻 Quiz Game</h3>
-                                <p class="mb-4">A simple multiple-choice quiz with a few questions and a scoring system.</p>
-                                <a href="projects/software_development_projects/10_quiz_game.html" class="text-blue-400 hover:underline" target="_blank">View Code</a>
-                            </div>
-                        </div>                        
                     </div>
-                    <!-- Navigation Arrows -->
-                    <div class="swiper-button-prev absolute left-0 text-white"></div>
-                    <div class="swiper-button-next absolute right-0 text-white"></div>
-
-                    <!-- Pagination (dots) -->
-                    <div class="swiper-pagination mt-4"></div>
+                    <div>
+                        <div class="flex justify-between mb-1">
+                            <span class="font-semibold">Data Visualization</span>
+                            <span class="text-sm text-gray-600">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </details>
-    </div>
-</section>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="bg-gradient-to-br from-primary to-blue-900 text-white p-6 rounded-lg shadow-lg">
+                <i class="fas fa-laptop-code text-4xl mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Web Development</h3>
+                <p class="text-sm">HTML, CSS, JavaScript, ReactNative</p>
+            </div>
+            <div class="bg-gradient-to-br from-primary to-blue-900 text-white p-6 rounded-lg shadow-lg">
+                <i class="fas fa-database text-4xl mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Data Analysis</h3>
+                <p class="text-sm">Wrangling, Cleaning, Statistical Modeling</p>
+            </div>
+            <div class="bg-gradient-to-br from-primary to-blue-900 text-white p-6 rounded-lg shadow-lg">
+                <i class="fas fa-code-branch text-4xl mb-4"></i>
+                <h3 class="text-lg font-bold mb-2">Version Control</h3>
+                <p class="text-sm">Git, GitHub, Collaboration</p>
+            </div>
+        </div>
+    </section>
 
     <!-- Resume Section -->
     <section id="resume" class="bg-gray-100 py-20 px-6 md:px-0 text-center">
@@ -655,43 +610,343 @@
         </div>
     </section>
 
-<!-- Footer -->
-<footer class="py-4 bg-gray-900 text-center">
-    <p>2025 Ishita Goswami.</p>
-</footer>
+    <!-- Footer -->
+    <footer class="bg-primary text-white py-8 text-center">
+        <p class="mb-2">&copy; 2025 Ishita Goswami. All rights reserved.</p>
+        <p class="text-sm opacity-75">Built with passion for bioinformatics & technology</p>
+    </footer>
 
-<!-- Swiper CSS -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script>
+        // Scroll Progress Bar
+        window.addEventListener('scroll', () => {
+            const scrollProgress = document.getElementById('scrollProgress');
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrollPercentage = (scrollTop / scrollHeight) * 100;
+            scrollProgress.style.width = scrollPercentage + '%';
+        });
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script>
-new Swiper('.mySwiper', {
-    loop: true,
-    speed: 1000,
-    spaceBetween: 30,
-    autoplay: {
-        delay: 2500,
-        disableOnInteraction: false,
-    },
-    pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-    },
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-        640: { slidesPerView: 1 },
-        768: { slidesPerView: 2 },
-        1024: { slidesPerView: 3 },
-    }
-});
-</script>
+        // Side menu functionality
+        const hamburgerBtn = document.getElementById('hamburgerBtn');
+        const sideMenu = document.getElementById('sideMenu');
+        const menuOverlay = document.getElementById('menuOverlay');
+        const closeMenu = document.getElementById('closeMenu');
+        const menuItems = document.querySelectorAll('.menu-item');
 
+        function openMenu() {
+            sideMenu.classList.add('active');
+            menuOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeMenuFunc() {
+            sideMenu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        hamburgerBtn.addEventListener('click', openMenu);
+        closeMenu.addEventListener('click', closeMenuFunc);
+        menuOverlay.addEventListener('click', closeMenuFunc);
+
+        menuItems.forEach(item => {
+            item.addEventListener('click', closeMenuFunc);
+        });
+
+        // Project tabs
+        const tabs = document.querySelectorAll('.project-tab');
+        const academicGrid = document.getElementById('academic');
+        const portfolioGrid = document.getElementById('portfolio');
+
+        // Set default active tab on load
+        document.querySelector('.project-tab[data-target="academic"]').click();
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => {
+                    t.classList.remove('bg-primary', 'text-white', 'shadow-md');
+                    t.classList.add('border-2', 'border-primary', 'text-primary');
+                });
+                tab.classList.add('bg-primary', 'text-white', 'shadow-md');
+                tab.classList.remove('border-2', 'border-primary', 'text-primary');
+
+                if (tab.dataset.target === 'academic') {
+                    academicGrid.classList.remove('hidden');
+                    portfolioGrid.classList.add('hidden');
+                } else {
+                    portfolioGrid.classList.remove('hidden');
+                    academicGrid.classList.add('hidden');
+                }
+            });
+        });
+
+        // ===============================
+        // Advanced Scientific Visualization
+        // ===============================
+        let dnaPhase = 0;
+        let dnaRotation = 0;
+
+        const canvas = document.getElementById('networkCanvas');
+        const ctx = canvas.getContext('2d');
+
+        function resizeCanvas() {
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
+        }
+        window.addEventListener('resize', resizeCanvas);
+        resizeCanvas();
+
+        // -------------------------------
+        // CONFIG
+        // -------------------------------
+        const LEFT_COLOR = '212,175,55';   // gold
+        const RIGHT_COLOR = '44,90,160'; // #2C5AA0 dark blue
+        const NODE_COUNT = window.innerWidth < 768 ? 30 : 46;
+        const MAX_DIST = 150;
+
+        // Animation phases
+        const PHASES = {
+            NETWORK: 0,
+            DNA: 1,
+            TREE: 2
+        };
+
+        let currentPhase = PHASES.NETWORK;
+        let phaseTimer = 0;
+
+        // -------------------------------
+        // NODE CLASS
+        // -------------------------------
+        class Node {
+            constructor(side) {
+                this.side = side;
+                this.baseX = Math.random() * canvas.width / 2 +
+                    (side === 'right' ? canvas.width / 2 : 0);
+                this.baseY = Math.random() * canvas.height;
+
+                this.x = this.baseX;
+                this.y = this.baseY;
+
+                this.vx = (Math.random() - 0.5) * 0.15;
+                this.vy = (Math.random() - 0.5) * 0.15;
+
+                this.radius = 2;
+                this.target = null;
+            }
+
+            move() {
+                if (!this.target) {
+                    this.x += this.vx;
+                    this.y += this.vy;
+                } else {
+                    this.x += (this.target.x - this.x) * 0.05;
+                    this.y += (this.target.y - this.y) * 0.05;
+                }
+
+                if (this.x < 0 || this.x > canvas.width) this.vx *= -1;
+                if (this.y < 0 || this.y > canvas.height) this.vy *= -1;
+            }
+
+            draw() {
+                const color = this.side === 'left' ? LEFT_COLOR : RIGHT_COLOR;
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(${color},0.9)`;
+                ctx.fill();
+            }
+        }
+
+        // -------------------------------
+        // INITIALIZE NODES
+        // -------------------------------
+        let nodes = [];
+
+        function initNodes() {
+            nodes = [];
+            for (let i = 0; i < NODE_COUNT; i++) {
+                nodes.push(new Node(i % 2 === 0 ? 'left' : 'right'));
+            }
+        }
+        initNodes();
+
+        // -------------------------------
+        // DRAW NETWORK CONNECTIONS
+        // -------------------------------
+        function drawConnections() {
+            nodes.forEach(a => {
+                nodes.forEach(b => {
+                    if (a === b || a.side !== b.side) return;
+
+                    const dx = a.x - b.x;
+                    const dy = a.y - b.y;
+                    const d = Math.sqrt(dx * dx + dy * dy);
+
+                    if (d < MAX_DIST) {
+                        const color = a.side === 'left' ? LEFT_COLOR : RIGHT_COLOR;
+                        ctx.strokeStyle = `rgba(${color},${1 - d / MAX_DIST})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(a.x, a.y);
+                        ctx.lineTo(b.x, b.y);
+                        ctx.stroke();
+                    }
+                });
+            });
+        }
+
+        // -------------------------------
+        // DNA HELIX TARGETS
+        // -------------------------------
+        function setDNATargets() {
+            nodes.forEach(node => {
+                node.mode = 'dna';
+            });
+        }
+
+
+
+
+        // -------------------------------
+        // PHYLOGENETIC TREE TARGETS
+        // -------------------------------
+        let treeRotation = 0;
+
+        function setTreeTargets() {
+            treeRotation = 0;
+
+            const centerGap = canvas.width * 0.28;
+            const startY = canvas.height * 0.2;
+            const levelHeight = 80;
+
+            nodes.forEach((node, i) => {
+                const level = Math.floor(Math.log2(i + 1));
+                const indexInLevel = i - (Math.pow(2, level) - 1);
+                const nodesInLevel = Math.pow(2, level);
+
+                const horizontalSpread = 60 * nodesInLevel;
+                const offsetX =
+                    (indexInLevel / nodesInLevel - 0.5) * horizontalSpread;
+
+                const sideShift = node.side === 'left' ? -centerGap / 2 : centerGap / 2;
+
+                node.target = {
+                    x: canvas.width / 2 + sideShift + offsetX,
+                    y: startY + level * levelHeight
+                };
+            });
+        }
+
+
+
+        // -------------------------------
+        // RESET TO NETWORK
+        // -------------------------------
+        function resetTargets() {
+            nodes.forEach(n => n.target = null);
+        }
+
+        // -------------------------------
+        // MAIN ANIMATION LOOP
+        // -------------------------------
+
+        let labelOpacity = 0;
+        let labelText = '';
+
+
+        function animate() {
+
+            if (currentPhase === PHASES.DNA) {
+                dnaPhase += 0.02;
+            }
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+            // Phase timing
+            phaseTimer++;
+
+            // Fade logic
+            if (labelOpacity < 1 && phaseTimer < 180) {
+                labelOpacity += 0.01;
+            }
+
+            if (phaseTimer > 400) {
+                labelOpacity -= 0.01;
+                if (labelOpacity < 0) labelOpacity = 0;
+            }
+
+            // Phase transitions
+            if (currentPhase === PHASES.NETWORK && phaseTimer > 600) {
+                labelText = 'Interactions';
+                labelOpacity = 0;
+                setDNATargets();
+                currentPhase = PHASES.DNA;
+                phaseTimer = 0;
+            }
+
+            if (currentPhase === PHASES.DNA && phaseTimer > 1000) {
+                labelText = 'Structure';
+                labelOpacity = 0;
+                setTreeTargets();
+                currentPhase = PHASES.TREE;
+                phaseTimer = 0;
+            }
+
+            if (currentPhase === PHASES.TREE && phaseTimer > 600) {
+                labelText = 'Evolution';
+                labelOpacity = 0;
+                resetTargets();
+                currentPhase = PHASES.NETWORK;
+                phaseTimer = 0;
+            }
+
+            drawConnections();
+
+            nodes.forEach((node, index) => {
+
+                // DNA MODE
+                if (currentPhase === PHASES.DNA && node.mode === 'dna') {
+                    const spacing = canvas.width / nodes.length;
+                    const centerY = canvas.height / 2;
+                    const amplitude = 45;
+
+                    const strandOffset = index % 2 === 0 ? Math.PI : 0;
+
+                    const targetX = index * spacing;
+                    const targetY =
+                        centerY + Math.sin(dnaPhase + index * 0.45 + strandOffset) * amplitude;
+
+                    // Smooth follow
+                    node.x += (targetX - node.x) * 0.06;
+                    node.y += (targetY - node.y) * 0.06;
+
+                } else {
+                    // NORMAL NETWORK / TREE MOVEMENT
+                    node.move();
+                }
+
+                node.draw();
+            });
+
+
+            requestAnimationFrame(animate);
+        }
+
+        function drawPhaseLabel() {
+            if (!labelText) return;
+
+            ctx.save();
+            ctx.globalAlpha = labelOpacity;
+            ctx.font = '600 18px Inter, sans-serif';
+            ctx.fillStyle = 'rgba(255,255,255,1)';
+            ctx.textAlign = 'center';
+            ctx.fillText(labelText, canvas.width / 2, canvas.height * 0.85);
+            ctx.restore();
+        }
+
+        animate();
+        drawPhaseLabel();
+
+    </script>
 </body>
 
 </html>
-
-
-
