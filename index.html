@@ -24,7 +24,7 @@
             --bg-dark: #0D3B66;
             --text-dark: #333;
             --text-light: #fff;
-            --section-colors: #EDF6FF;
+            --section-colors: #677688;
         }
 
         body {
@@ -35,7 +35,7 @@
 
         /* Hero Section */
         .hero-bg {
-            background: linear-gradient(135deg, #0D3B66, #ffffff);
+            background: linear-gradient(to bottom, #0D3B66, #FAF0CA);
         }
 
         @keyframes float {
@@ -243,6 +243,45 @@
                     var(--section-colors) 50%);
             z-index: -1;
         }
+
+        /* Section Colors - Natural Flow from Hero */
+        .about-section {
+            background: linear-gradient(var(--accent));
+            position: relative;
+        }
+
+        .about-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100vw;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--section-colors), var(--section-colors) 50%);
+            z-index: -1;
+        }
+
+        #projects {
+            background: linear-gradient(var(--accent));
+        }
+
+        #skills {
+            background: linear-gradient(var(--accent));
+        }
+
+        #resume {
+            background: linear-gradient(var(--accent));
+        }
+
+        #contact {
+            background: linear-gradient(to bottom, #FAF0CA, #0D3B66);
+        }
+
+        footer {
+            background-color: #0D3B66;
+            color: white;
+        }
     </style>
 </head>
 
@@ -306,12 +345,12 @@
     <nav class="fixed w-full shadow-md z-50">
         <div class="max-w-6xl mx-auto flex justify-between items-center p-4">
             <div class="flex items-center gap-4">
-                <button id="hamburgerBtn" class="hamburger text-[var(--text-light)]">
+                <button id="hamburgerBtn" class="hamburger text-[var(--accent)]">
                     <i class="fas fa-bars text-2xl"></i>
                 </button>
-                <div class="text-xl text-[var(--text-light)] font-bold">Ishita Goswami</div>
+                <div class="text-xl text-[var(--accent)] font-bold">Ishita Goswami</div>
             </div>
-            <div class="hidden md:flex space-x-6 text-[var(--text-light)] font-semibold">
+            <div class="hidden md:flex space-x-6 text-[var(--accent)] font-semibold">
                 <a href="#about" class="hover:text-secondary transition">About</a>
                 <a href="#projects" class="hover:text-secondary transition">Projects</a>
                 <a href="#skills" class="hover:text-secondary transition">Skills</a>
@@ -350,31 +389,34 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section max-w-6xl mx-auto py-20 px-6 md:px-0 relative">
+    <section id="about" class="about-section py-20 px-6 md:px-0 relative">
         <h2 class="text-4xl font-bold text-center text-primary mb-12">About Me</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <div>
-                <p class="mb-4 text-lg">🙋🏻‍♀️ Hey there! My name is Ishita Goswami, welcome to my portfolio.</p>
-                <p class="mb-4 text-lg">🎓 Education:</p>
-                <ul class="list-disc ml-6 mb-4">
-                    <li>Master's in Bioinformatics & Systems Biology, University of Manchester</li>
-                    <li>Bachelor's in Microbial & Food Technology, Panjab University</li>
-                </ul>
-                <p class="mb-4 text-lg">💻 Actively seeking roles in Bioinformatics, Software Development, and Data
-                    Analysis in
-                    the UK.</p>
-                <p class="mb-4 text-lg">🔬 Interests include Evolutionary Biology, AI in Biology, Data Analysis, and
-                    Genomics
-                    research.</p>
-            </div>
-            <div class="flex flex-col gap-4">
-                <div class="bg-primary text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold mb-2">Projects Completed</h3>
-                    <p>10+ Academic & Portfolio Projects showcasing Bioinformatics and Software Development skills.</p>
+        <div class="max-w-6xl mx-auto px-6 md:px-0">
+            <div class="grid md:grid-cols-2 gap-12">
+                <div>
+                    <p class="mb-4 text-lg">🙋🏻‍♀️ Hey there! My name is Ishita Goswami, welcome to my portfolio.</p>
+                    <p class="mb-4 text-lg">🎓 Education:</p>
+                    <ul class="list-disc ml-6 mb-4">
+                        <li>Master's in Bioinformatics & Systems Biology, University of Manchester</li>
+                        <li>Bachelor's in Microbial & Food Technology, Panjab University</li>
+                    </ul>
+                    <p class="mb-4 text-lg">💻 Actively seeking roles in Bioinformatics, Software Development, and Data
+                        Analysis in
+                        the UK.</p>
+                    <p class="mb-4 text-lg">🔬 Interests include Evolutionary Biology, AI in Biology, Data Analysis, and
+                        Genomics
+                        research.</p>
                 </div>
-                <div class="bg-primary text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
-                    <h3 class="text-xl font-bold mb-2">Technical Skills</h3>
-                    <p>Python, R, ML, NGS analysis, Web Development, Data Visualization, Git</p>
+                <div class="flex flex-col gap-4">
+                    <div class="bg-accent text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold mb-2">Projects Completed</h3>
+                        <p>10+ Academic & Portfolio Projects showcasing Bioinformatics and Software Development skills.
+                        </p>
+                    </div>
+                    <div class="bg-accent text-white p-6 rounded-lg shadow-lg hover:shadow-xl transition">
+                        <h3 class="text-xl font-bold mb-2">Technical Skills</h3>
+                        <p>Python, R, ML, NGS analysis, Web Development, Data Visualization, Git</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -586,40 +628,43 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="max-w-6xl mx-auto py-20 px-6 md:px-0">
+    <section id="contact" class="py-20 px-6 md:px-0">
         <h2 class="text-4xl font-bold text-center text-primary mb-12">Get In Touch</h2>
-        <div class="grid md:grid-cols-2 gap-12">
-            <form action="send_mail.php" method="POST" class="flex flex-col gap-4">
-                <input type="text" name="name" placeholder="Your Name"
-                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
-                    required>
-                <input type="email" name="email" placeholder="Your Email"
-                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
-                    required>
-                <textarea name="message" rows="5" placeholder="Your Message"
-                    class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
-                    required></textarea>
-                <button type="submit"
-                    class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition shadow-lg">
-                    <i class="fas fa-paper-plane mr-2"></i>Send Message
-                </button>
-            </form>
-            <div class="flex flex-col gap-6 items-center justify-center">
-                <div class="bg-white p-6 rounded-lg shadow-lg w-full">
-                    <p class="text-lg mb-4"><i class="fas fa-envelope text-primary mr-3"></i> ishita_goswami@outlook.com
-                    </p>
-                    <p class="text-lg"><i class="fas fa-map-marker-alt text-primary mr-3"></i> Manchester, UK</p>
-                </div>
-                <div class="flex gap-6 mt-4">
-                    <a href="https://github.com/ishiigos"
-                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
-                            class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/ishita-goswami-21aug"
-                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
-                            class="fab fa-linkedin"></i></a>
-                    <a href="https://linktr.ee/ishita_goswami"
-                        class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
-                            class="fas fa-link"></i></a>
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-12">
+                <form action="send_mail.php" method="POST" class="flex flex-col gap-4">
+                    <input type="text" name="name" placeholder="Your Name"
+                        class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                        required>
+                    <input type="email" name="email" placeholder="Your Email"
+                        class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                        required>
+                    <textarea name="message" rows="5" placeholder="Your Message"
+                        class="p-3 rounded-lg border-2 border-gray-300 focus:border-primary outline-none transition"
+                        required></textarea>
+                    <button type="submit"
+                        class="bg-primary text-white px-6 py-3 rounded-full font-semibold hover:bg-secondary transition shadow-lg">
+                        <i class="fas fa-paper-plane mr-2"></i>Send Message
+                    </button>
+                </form>
+                <div class="flex flex-col gap-6 items-center justify-center">
+                    <div class="bg-white p-6 rounded-lg shadow-lg w-full">
+                        <p class="text-lg mb-4"><i class="fas fa-envelope text-primary mr-3"></i>
+                            ishita_goswami@outlook.com
+                        </p>
+                        <p class="text-lg"><i class="fas fa-map-marker-alt text-primary mr-3"></i> Manchester, UK</p>
+                    </div>
+                    <div class="flex gap-6 mt-4">
+                        <a href="https://github.com/ishiigos"
+                            class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/ishita-goswami-21aug"
+                            class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                                class="fab fa-linkedin"></i></a>
+                        <a href="https://linktr.ee/ishita_goswami"
+                            class="text-primary hover:text-secondary text-3xl transition transform hover:scale-110"><i
+                                class="fas fa-link"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -714,7 +759,7 @@
         // -------------------------------
         // CONFIG
         // -------------------------------
-        const LEFT_COLOR = '255,255,255';   // gold
+        const LEFT_COLOR = '250,240,202'; //'212,175,55';   // gold
         const RIGHT_COLOR = '44,90,160'; // #2C5AA0 dark blue
         const NODE_COUNT = window.innerWidth < 768 ? 30 : 46;
         const MAX_DIST = 150;
